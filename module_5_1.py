@@ -4,11 +4,15 @@ class House:
         self.number_of_floors = number_of_floors
 
     def go_to(self, new_floor):
-        print(f'Номер нового этажа {new_floor}')
+        self.new_floor = new_floor
+        if self.new_floor > self.number_of_floors or 1 > self.new_floor:
+            print('Такого этажа не существует')
+        else:
+            for i in range(1, new_floor + 1):
+                print(i)
 
-# h1 = House('ЖК Горский', 18)
-# Метод go_to выводит на экран(в консоль) значения от 1 до new_floor(включительно).
-# Если же new_floor больше чем self.number_of_floors или меньше 1, то вывести строку "Такого этажа не существует".
 
-well_ = House('Сосенки', 5)
-print(well_.name, well_.number_of_floors)
+h1 = House('ЖК Горский', 18)
+h2 = House('Домик в деревне', 2)
+h1.go_to(5)
+h2.go_to(10)
